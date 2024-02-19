@@ -1,0 +1,171 @@
+dataset:
+  value: UCM
+dataroot:
+  value: ./data/xlsa17/data
+image_embedding:
+  value: res101
+class_embedding:
+  value: att
+syn_num:
+  value: 700
+gzsl:
+  value: True
+preprocessing:
+  value: True
+standardization:
+  value: False
+workers:
+  value: 16
+batch_size:
+  value: 64
+resSize:
+  value: 2048
+attSize:
+  value: 33
+nz:
+  value: 33
+ngh:
+  value: 4096
+ndh:
+  value: 4096
+nepoch:
+  value: 200
+cls_nepoch:
+  value: 2000
+critic_iter:
+  value: 1
+lambda1:
+  value: 10.
+lambda2:
+  value: 10.
+lr:
+  value: 0.0001
+feed_lr:
+  value: 0.00001
+dec_lr:
+  value: 0.0001
+classifier_lr:
+  value: 0.001
+beta1:
+  value: 0.5
+cuda:
+  value: True
+encoded_noise:
+  value: True
+manualSeed:
+  value: 8488
+nclass_all:
+  value: 21
+validation:
+  value: False
+encoder_layer_sizes:
+  value: [8192, 4096]
+decoder_layer_sizes:
+  value: [4096, 8192]
+gammaD:
+  value: 10
+gammaG:
+  value: 10
+gammaG_D2:
+  value: 1000
+gammaD2:
+  value: 1000
+latent_size:
+  value: 33
+conditional:
+  value: True
+a1:
+  value: 1.
+a2:
+  value: 1.
+recons_weight:
+  value: 0.999
+feedback_loop:
+  value: 2
+freeze_dec:
+  value: False
+result_root:
+  value: ./result_new
+center_margin:
+  value: 21
+center_weight:
+  value: 0.5
+incenter_weight:
+  value: 0.4 #0.4
+cls_weight:
+  value: 0.2
+nclass_seen:
+  value: 16
+latensize:
+  value: 2048
+i_c:
+  value: 0.1
+lr_dec:
+  value: False
+lr_dec_ep:
+  value: 1
+final_classifier:
+  value: softmax
+k_nn:
+  value: 5
+feature_component:
+  value: FR_h_a
+pre_seed:
+  value: 214
+pre_dim_v:
+  value: 300 #300
+pre_bs:
+  value: 50
+pre_iters:
+  value: 1601
+pre_normalize_V:
+  value: False
+pre_normalize_F:
+  value: True
+
+
+#dataset:value: UCM
+num_class:
+  value: 21
+num_attribute:
+  value: 33
+img_size:
+  value: 448
+resnet_region:
+  value: 196
+dim_f:
+  value: 2048
+dim_v:
+  value: 300
+device:
+  value: cuda:0
+batch_size:
+  value: 64
+epochs:
+  value: 200
+use_unzip:
+  value: True
+random_seed:
+  value: 6
+lambda_:
+  value: 0.75
+lambda_reg:
+  value: 0.01
+normalize_V:
+  value: False
+tf_SAtt:
+  value: True
+tf_ec_layer:
+  value: 1
+tf_dc_layer:
+  value: 1
+tf_heads:
+  value: 1
+tf_common_dim:
+  value: 300
+tf_aux_embed:
+  value: True
+tf_dim_feedforward:
+  value: 2048
+tf_dropout:
+  value: 0.3
