@@ -7,7 +7,7 @@ This paper mainly focuses on creating visual descriptions, i.e., semantic attrib
 
 **The Framework for the TransFree**
 
-![](figs/collas-bd.pdf)
+![](figs/collas_bd.pdf)
 
 **Dependencies to run the TransFree**
 
