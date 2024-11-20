@@ -1,17 +1,17 @@
-**TransFree**
+**TransRefine**
 
 
-This GitHub repository contains the training code for the paper  "**TRANSFREE: TRANSFORMER-AUGMENTED FEATURE REFINEMENT FOR ZERO-SHOT SCENE CLASSIFICATION IN REMOTE SENSING IMAGES**". 
+This GitHub repository contains the training code for the paper  "**TRANSREFINE: TRANSFORMER-AUGMENTED FEATURE REFINEMENT FOR ZERO-SHOT SCENE CLASSIFICATION IN REMOTE SENSING IMAGES**". 
 
 This paper mainly focuses on creating visual descriptions, i.e., semantic attributes for the four prominent remote sensing benchmark datasets (i.e., UCM21, AID30, NWPU-RESISC45, and WHU-RS19). For each class, we identified the objects that differentiate it from all the other classes, and some common attributes in various classes were also considered. For the UCM21, AID30, NWPU45, and WHU-RS19 datasets, we have created 33, 44, 57, and 26 semantic attributes, respectively. These semantic attributes and attribute over values are available at ./data/xlsa17/code/...
 
-**The Framework for the TransFree**
+**The Framework for the TransRefine**
 
-![](figs/transfree.png)
+![](figs/TransRefine.png)
 
-**Dependencies to run the TransFree**
+**Dependencies to run the TransRefine**
 
-The implementation of "TransFree" is based on Python 3.8.8 and [PyTorch](https://pytorch.org/) 1.8.0. To install all required dependencies:
+The implementation of "TransRefine" is based on Python 3.8.8 and [PyTorch](https://pytorch.org/) 1.8.0. To install all required dependencies:
 ```
 $ pip install -r requirements.txt
 ```  
@@ -23,7 +23,7 @@ $ pip install wandb
 
 **Downloading datasets**
 
-We trained the model "TransFree" on four prominent benchmark datasets of the zero-shot scene classification in remote sensing images: [UCM21](http://weegee.vision.ucmerced.edu/datasets/landuse.html), [AID30](https://captain-whu.github.io/AID/), NWPU45, and WHU-RS19. Please download NWPU and RS19 datasets in your way. To train the "TransFree", first, you should download these datasets. Then, decompress and organize them as follows: 
+We trained the model "TransRefine" on four prominent benchmark datasets of the zero-shot scene classification in remote sensing images: [UCM21](http://weegee.vision.ucmerced.edu/datasets/landuse.html), [AID30](https://captain-whu.github.io/AID/), NWPU45, and WHU-RS19. Please download NWPU and RS19 datasets in your way. To train the "TransRefine", first, you should download these datasets. Then, decompress and organize them as follows: 
 ```
 .
 ├── data
@@ -44,7 +44,7 @@ Specifically, the samples of the UCM dataset are organized as follows:
 ```
 **Obtaining res101.mat and att_splits.mat files**
 
-Please follow the instructions we have included below to obtain res101.mat and att_splits.mat files, and place them in TransFree/data/xlsa17/data/{dataset}/... 
+Please follow the instructions we have included below to obtain res101.mat and att_splits.mat files, and place them in TransRefine/data/xlsa17/data/{dataset}/... 
 
 Run the following codes one after the other.
 ```
@@ -65,12 +65,12 @@ $ python dataset_create.py
 ```
 Initially, set the dataset path and run the dataset_create.py file. This code obtains att_splits.mat file. 
 
-Then, place **res101.mat** and **att_splits.mat** files into transfree/data/xlsa17/data/{dataset}/...
+Then, place **res101.mat** and **att_splits.mat** files into TransRefine/data/xlsa17/data/{dataset}/...
 
 Example for the UCM dataset: 
 ```
-          transfree/data/xlsa17/data/UCM/res101.mat    
-          transfree/data/xlsa17/data/UCM/att_splits.mat
+          TransRefine/data/xlsa17/data/UCM/res101.mat    
+          TransRefine/data/xlsa17/data/UCM/att_splits.mat
 ```
 **Extracting visual features**    
 
@@ -85,10 +85,10 @@ $ python preprocessing.py --dataset RSD --compression --device cuda:0
 Note: Adjust the "split_idx" value in the preprocessing.py file according to the dataset path if you get FileNotFoundError while running the above code.
 ```
 
-**Training TransFree**
+**Training TransRefine**
 
 In `./wandb_config`, we provide parameter settings for UCM21, AID30, NWPU45, and RS19 for zero-shot learning tasks. 
-Run the given commands to train the "TransFree" from scratch:
+Run the given commands to train the "TransRefine" from scratch:
 
 ```
 $ python train_ucm.py   # UCM
